@@ -220,7 +220,7 @@ namespace LocalConnector
         {
             string input = ChangeIpTBox.Text;
 
-            if (!string.IsNullOrEmpty(input) && System.Net.IPAddress.TryParse(input, out _))
+            if (!string.IsNullOrEmpty(input))
             {
                 var config = JObject.Parse(File.ReadAllText("config.json"));
                 config["IP"] = input;

@@ -21,3 +21,4 @@ C:\Users\Gipopotamus\Desktop\CHEREPOK\KPI\LocalConnector\LocalConnector\obj\Debu
 C:\Users\Gipopotamus\Desktop\CHEREPOK\KPI\LocalConnector\LocalConnector\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
 C:\Users\Gipopotamus\Desktop\CHEREPOK\KPI\LocalConnector\LocalConnector\obj\Debug\net8.0-windows\LocalConnector.csproj.AssemblyReference.cache
 C:\Users\Gipopotamus\Desktop\CHEREPOK\KPI\LocalConnector\LocalConnector\obj\Debug\net8.0-windows\LocalCon.322E8892.Up2Date
+C:\Users\Gipopotamus\Desktop\CHEREPOK\KPI\LocalConnector\LocalConnector\obj\Debug\net8.0-windows\LocalConnector.sourcelink.json

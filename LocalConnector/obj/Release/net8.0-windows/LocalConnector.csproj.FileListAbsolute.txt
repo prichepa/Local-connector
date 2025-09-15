@@ -21,3 +21,4 @@ C:\Users\Gipopotamus\Desktop\CHEREPOK\KPI\LocalConnector\LocalConnector\obj\Rele
 C:\Users\Gipopotamus\Desktop\CHEREPOK\KPI\LocalConnector\LocalConnector\obj\Release\net8.0-windows\LocalConnector.pdb
 C:\Users\Gipopotamus\Desktop\CHEREPOK\KPI\LocalConnector\LocalConnector\obj\Release\net8.0-windows\LocalConnector.genruntimeconfig.cache
 C:\Users\Gipopotamus\Desktop\CHEREPOK\KPI\LocalConnector\LocalConnector\obj\Release\net8.0-windows\ref\LocalConnector.dll
+C:\Users\Gipopotamus\Desktop\CHEREPOK\KPI\LocalConnector\LocalConnector\obj\Release\net8.0-windows\LocalConnector.sourcelink.json
