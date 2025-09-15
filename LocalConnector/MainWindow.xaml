@@ -1,0 +1,36 @@
+﻿<Window x:Class="LocalConnector.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LocalConnector"
+        mc:Ignorable="d"
+        Title="local connector" Height="200" Width="500">
+    <Grid Background="#302f3c">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="ChangeFolderBtn" Click="ChangeFolderBtn_Click" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="16, 8" FontSize="16" VerticalAlignment="Top">Change saving folder</Button>
+        <TextBlock x:Name="ChangeFolderTB" Grid.Row="0" Grid.Column="1" Margin="16,8" Padding="2" FontSize="12" HorizontalAlignment="Stretch" VerticalAlignment="Top" Foreground="White" TextWrapping="Wrap"/>
+
+        <Button x:Name="ChangeIpBtn" Click="ChangeIpBtn_Click" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="16, 8" FontSize="16" VerticalAlignment="Top" Visibility="Collapsed">Change hosts ip</Button>
+        <TextBox x:Name="ChangeIpTBox" Grid.Row="0" Grid.Column="1" Margin="16,8" Padding="2" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Top" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Visibility="Collapsed"/>
+
+        <Button x:Name="HostBtn" Click="HostBtn_Click" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Margin="16, 8" FontSize="16">Start hosting</Button>
+        <Button x:Name="ClientBtn" Click="ClientBtn_Click" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" Margin="16, 8" FontSize="16">Connect to host</Button>
+        <Label x:Name="IpLabel" Grid.Row="0" Grid.Column="0" Foreground="White" FontSize="8" Visibility="Collapsed"></Label>
+
+        <Button x:Name="CancelBtn" Click="CancelBtn_Click" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Margin="16, 8" FontSize="16" Visibility="Collapsed">Cancel</Button>
+
+        <Button x:Name="ChooseOrSendBtn" Click="ChooseOrSendBtn_Click" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" Margin="16, 8" FontSize="16" Visibility="Collapsed">Send file</Button>
+        <Border x:Name="DragNDropElement" AllowDrop="True" Drop="Border_Drop" Grid.Row="0" Grid.ColumnSpan="2" Margin="4" Background="#3a3947" Visibility="Collapsed">
+            <TextBlock x:Name="DragNDropStatTB" Text="Put your files here" Foreground="White" FontSize="12" Margin="4"/>
+        </Border>
+    </Grid>
+</Window>
