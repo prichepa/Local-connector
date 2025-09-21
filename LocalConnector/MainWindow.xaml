@@ -20,7 +20,16 @@
         <TextBlock x:Name="ChangeFolderTB" Grid.Row="0" Grid.Column="1" Margin="16,8" Padding="2" FontSize="12" HorizontalAlignment="Stretch" VerticalAlignment="Top" Foreground="White" TextWrapping="Wrap"/>
 
         <Button x:Name="ChangeIpBtn" Click="ChangeIpBtn_Click" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="16, 8" FontSize="16" VerticalAlignment="Top" Visibility="Collapsed">Change hosts ip</Button>
-        <TextBox x:Name="ChangeIpTBox" Grid.Row="0" Grid.Column="1" Margin="16,8" Padding="2" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Top" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Visibility="Collapsed"/>
+        <TextBox x:Name="ChangeIpTBox" 
+                 Grid.Row="0" 
+                 Grid.Column="1" 
+                 Margin="16,8" 
+                 Padding="2" 
+                 FontSize="16" 
+                 HorizontalAlignment="Stretch" 
+                 VerticalAlignment="Top" 
+                 TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Visibility="Collapsed" 
+                 TextChanged="ChangeIpTBox_TextChanged"/>
 
         <Button x:Name="HostBtn" Click="HostBtn_Click" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Margin="16, 8" FontSize="16">Start hosting</Button>
         <Button x:Name="ClientBtn" Click="ClientBtn_Click" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" Margin="16, 8" FontSize="16">Connect to host</Button>

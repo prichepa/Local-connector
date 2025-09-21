@@ -3,6 +3,11 @@ using System.Windows;
 using System.Text.Json;
 using System.IO;
 using Newtonsoft.Json.Linq;
+using System.Net;
+using System.Printing;
+using System.Windows.Controls;
+using System.Windows.Media;
+using System;
 
 namespace LocalConnector
 {
@@ -11,7 +16,7 @@ namespace LocalConnector
         string title;
         string? ChoosenFile;
         char UserType;
-        bool IsClientInChangeIpPage = false; 
+        bool IsClientInChangeIpPage = false;
 
         string CurrentPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "ReceivedFiles");
         string CurrentIp = "127.0.0.1";
@@ -31,7 +36,6 @@ namespace LocalConnector
                     Path = CurrentPath,
                     IP = CurrentIp
                 };
-
                 string json = JsonSerializer.Serialize(config, new JsonSerializerOptions { WriteIndented = true });
 
                 File.WriteAllText(fileName, json);
@@ -215,25 +219,62 @@ namespace LocalConnector
                 ChangeFolderTB.Text = selectedPath;
             }
         }
-
+        private void ChangeIpTBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (CurrentIp != ChangeIpTBox .Text)
+            {
+                ChangeIpBtn.Background = Brushes.Red;
+                ClientBtn.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                ChangeIpBtn.Background = Brushes.LightGreen;
+            }
+        }
         private void ChangeIpBtn_Click(object sender, RoutedEventArgs e)
         {
             string input = ChangeIpTBox.Text;
-
-            if (!string.IsNullOrEmpty(input))
+            if (!IsValidIp(input))
+            {
+                ChangeIpBtn.Background = Brushes.Red;
+            }
+            else if (!string.IsNullOrEmpty(input))
             {
                 var config = JObject.Parse(File.ReadAllText("config.json"));
                 config["IP"] = input;
                 File.WriteAllText("config.json", config.ToString());
+                ChangeIpBtn.Background = Brushes.LightGreen;
+                ClientBtn.Visibility = Visibility.Visible;
 
                 CurrentIp = input;
             }
-            else if (!string.IsNullOrEmpty(input))
-            {
-                MessageBox.Show("Invalid IP address format!", "Error");
-                ChangeIpTBox.Text = CurrentIp;
-            }
         }
+        public bool IsValidIp(string ip)
+        {
+            if(ip == "")
+            {
+                return false;
+            }
+            string ip_sample = ip;
+            int secondIndex = 0;
+            for (int i = 1; i <= 4; i++)
+            {
+                string buffer = "";
+                while (secondIndex != ip_sample.Length  && ip_sample[secondIndex] != '.')
+                {
+                    buffer += ip_sample[secondIndex];
+                    secondIndex++;
+                }
+                secondIndex++;
+
+                if(buffer == "" || (Convert.ToInt32(buffer) >= 255 || Convert.ToInt32(buffer) <= 0))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
     }
 
     public class Config
