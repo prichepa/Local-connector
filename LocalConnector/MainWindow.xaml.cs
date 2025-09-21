@@ -104,6 +104,7 @@ namespace LocalConnector
                 IsClientInChangeIpPage = true;
 
                 ChangeIpTBox.Text = CurrentIp;
+                ChangeIpBtn.Background = Brushes.White;
             }
             else
             {
@@ -221,35 +222,37 @@ namespace LocalConnector
         }
         private void ChangeIpTBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (CurrentIp != ChangeIpTBox .Text)
+            if (!IsIpValid(ChangeIpTBox.Text))
             {
-                ChangeIpBtn.Background = Brushes.Red;
+                ChangeIpBtn.IsEnabled = false;
+            }
+            else
+            {
+                ChangeIpBtn.IsEnabled = true;
+            }
+            if (CurrentIp != ChangeIpTBox.Text)
+            {
+                ChangeIpBtn.Background = Brushes.LightGreen;
                 ClientBtn.Visibility = Visibility.Collapsed;
             }
             else
             {
-                ChangeIpBtn.Background = Brushes.LightGreen;
+                ClientBtn.Visibility = Visibility.Visible;
+                ChangeIpBtn.Background = Brushes.White;
             }
         }
         private void ChangeIpBtn_Click(object sender, RoutedEventArgs e)
         {
             string input = ChangeIpTBox.Text;
-            if (!IsValidIp(input))
-            {
-                ChangeIpBtn.Background = Brushes.Red;
-            }
-            else if (!string.IsNullOrEmpty(input))
-            {
-                var config = JObject.Parse(File.ReadAllText("config.json"));
-                config["IP"] = input;
-                File.WriteAllText("config.json", config.ToString());
-                ChangeIpBtn.Background = Brushes.LightGreen;
-                ClientBtn.Visibility = Visibility.Visible;
+            var config = JObject.Parse(File.ReadAllText("config.json"));
+            config["IP"] = input;
+            File.WriteAllText("config.json", config.ToString());
+            ChangeIpBtn.Background = Brushes.White;
+            ClientBtn.Visibility = Visibility.Visible;
 
-                CurrentIp = input;
-            }
+            CurrentIp = input;
         }
-        public bool IsValidIp(string ip)
+        public bool IsIpValid(string ip)
         {
             if(ip == "")
             {
