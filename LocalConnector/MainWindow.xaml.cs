@@ -47,19 +47,22 @@ namespace LocalConnector
                 string json = File.ReadAllText(fileName);
                 config = JsonSerializer.Deserialize<Config>(json);
 
-                CurrentPath = config.Path;
+                if (Directory.Exists(config.Path))
+                {
+                    CurrentPath = config.Path;
+                }
+                else
+                {
+                    Directory.CreateDirectory(CurrentPath);
+                }
                 CurrentIp = config.IP;
-            }
-
-            if (!Directory.Exists(CurrentPath))
-            {
-                Directory.CreateDirectory(CurrentPath);
             }
 
             ChangeFolderTB.Text = CurrentPath;
 
             ChooseOrSendBtn.Content = "Choose file";
             WantchFolderAfterConnection.Visibility = Visibility.Collapsed;
+            ChangeIpBtn.IsEnabled = true;
 
             title = Title;
         }
