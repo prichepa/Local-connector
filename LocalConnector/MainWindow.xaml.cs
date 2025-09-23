@@ -8,6 +8,7 @@ using System.Printing;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System;
+using System.Diagnostics;
 
 namespace LocalConnector
 {
@@ -57,6 +58,7 @@ namespace LocalConnector
             ChangeFolderTB.Text = CurrentPath;
 
             ChooseOrSendBtn.Content = "Choose file";
+            ChangeFolderAfterConnection.Visibility = Visibility.Collapsed;
 
             title = Title;
         }
@@ -130,6 +132,7 @@ namespace LocalConnector
 
                 ChooseOrSendBtn.Visibility = Visibility.Visible;
                 DragNDropElement.Visibility = Visibility.Visible;
+                ChangeFolderAfterConnection.Visibility = Visibility.Visible;
             }
         }
 
@@ -252,30 +255,49 @@ namespace LocalConnector
 
             CurrentIp = input;
         }
+        private void ChangeFolderAfterConnection_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
+        }
+        public int CheckDots(string ip)
+        {
+            int counter = 0;
+            for(int i = 0; i< ip.Length; i++)
+            {
+                if (ip[i] == '.')
+                {
+                    counter++;
+                }
+            }
+            return counter;
+        }
         public bool IsIpValid(string ip)
         {
-            if(ip == "")
+            if (ip == "" || CheckDots(ip) < 3)
             {
                 return false;
             }
-            string ip_sample = ip;
-            int secondIndex = 0;
-            for (int i = 1; i <= 4; i++)
+            else
             {
-                string buffer = "";
-                while (secondIndex != ip_sample.Length  && ip_sample[secondIndex] != '.')
+                string ip_sample = ip;
+                int secondIndex = 0;
+                for (int i = 1; i <= 4; i++)
                 {
-                    buffer += ip_sample[secondIndex];
+                    string buffer = "";
+                    while (secondIndex != ip_sample.Length && ip_sample[secondIndex] != '.')
+                    {
+                        buffer += ip_sample[secondIndex];
+                        secondIndex++;
+                    }
                     secondIndex++;
-                }
-                secondIndex++;
 
-                if(buffer == "" || (Convert.ToInt32(buffer) >= 255 || Convert.ToInt32(buffer) <= 0))
-                {
-                    return false;
+                    if (buffer == "" || (Convert.ToInt32(buffer) >= 255 || Convert.ToInt32(buffer) <= 0))
+                    {
+                        return false;
+                    }
                 }
+                return true;
             }
-            return true;
         }
 
     }
