@@ -32,7 +32,7 @@
                  TextChanged="ChangeIpTBox_TextChanged"/>
 
         <Button x:Name="HostBtn" Click="HostBtn_Click" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Margin="16, 8" FontSize="16">Start hosting</Button>
-        <Button x:Name="ChangeFolderAfterConnection" Click="ChangeFolderAfterConnection_Click" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Margin="10,8,0,8" FontSize="16">Change folder</Button>
+        <Button x:Name="WantchFolderAfterConnection" Click="WantchFolderAfterConnection_Click" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Margin="10,8,0,8" FontSize="16">Watch folder</Button>
         <Button x:Name="ClientBtn" Click="ClientBtn_Click" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" Margin="16, 8" FontSize="16">Connect to host</Button>
         <Label x:Name="IpLabel" Grid.Row="0" Grid.Column="0" Foreground="White" FontSize="8" Visibility="Collapsed"></Label>
 

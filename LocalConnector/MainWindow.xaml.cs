@@ -9,6 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System;
 using System.Diagnostics;
+using System.Windows.Shapes;
 
 namespace LocalConnector
 {
@@ -19,7 +20,7 @@ namespace LocalConnector
         char UserType;
         bool IsClientInChangeIpPage = false;
 
-        string CurrentPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "ReceivedFiles");
+        string CurrentPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "ReceivedFiles");
         string CurrentIp = "127.0.0.1";
 
         public MainWindow()
@@ -58,7 +59,7 @@ namespace LocalConnector
             ChangeFolderTB.Text = CurrentPath;
 
             ChooseOrSendBtn.Content = "Choose file";
-            ChangeFolderAfterConnection.Visibility = Visibility.Collapsed;
+            WantchFolderAfterConnection.Visibility = Visibility.Collapsed;
 
             title = Title;
         }
@@ -91,6 +92,7 @@ namespace LocalConnector
 
             ChooseOrSendBtn.Visibility = Visibility.Visible;
             DragNDropElement.Visibility = Visibility.Visible;
+            WantchFolderAfterConnection.Visibility = Visibility.Visible;
         }
 
         async void ClientBtn_Click(object sender, RoutedEventArgs e)
@@ -132,7 +134,7 @@ namespace LocalConnector
 
                 ChooseOrSendBtn.Visibility = Visibility.Visible;
                 DragNDropElement.Visibility = Visibility.Visible;
-                ChangeFolderAfterConnection.Visibility = Visibility.Visible;
+                WantchFolderAfterConnection.Visibility = Visibility.Visible;
             }
         }
 
@@ -209,7 +211,7 @@ namespace LocalConnector
 
             if (dialog.ShowDialog() == true)
             {
-                string selectedPath = Path.GetDirectoryName(dialog.FileName);
+                string selectedPath = System.IO.Path.GetDirectoryName(dialog.FileName);
 
                 if (string.IsNullOrEmpty(selectedPath))
                     selectedPath = dialog.FileName;
@@ -255,9 +257,9 @@ namespace LocalConnector
 
             CurrentIp = input;
         }
-        private void ChangeFolderAfterConnection_Click(object sender, RoutedEventArgs e)
+        private void WantchFolderAfterConnection_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
+            Process.Start("explorer.exe", CurrentPath);
         }
         public int CheckDots(string ip)
         {

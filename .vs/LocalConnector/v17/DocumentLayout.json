@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Documents\\GitHub\\Local-connector\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4F68EB32-082A-4FF3-9654-6ADEB8AEBB11}|LocalConnector\\LocalConnector.csproj|c:\\users\\user\\documents\\github\\local-connector\\localconnector\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F68EB32-082A-4FF3-9654-6ADEB8AEBB11}|LocalConnector\\LocalConnector.csproj|solutionrelative:localconnector\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4F68EB32-082A-4FF3-9654-6ADEB8AEBB11}|LocalConnector\\LocalConnector.csproj|c:\\users\\user\\documents\\github\\local-connector\\localconnector\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{4F68EB32-082A-4FF3-9654-6ADEB8AEBB11}|LocalConnector\\LocalConnector.csproj|solutionrelative:localconnector\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F68EB32-082A-4FF3-9654-6ADEB8AEBB11}|LocalConnector\\LocalConnector.csproj|c:\\users\\user\\documents\\github\\local-connector\\localconnector\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F68EB32-082A-4FF3-9654-6ADEB8AEBB11}|LocalConnector\\LocalConnector.csproj|solutionrelative:localconnector\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\AppData\\Local\\SourceServer\\8be87324bd3f7b826dcda48d241d4039c6da744949c2109430646b0f849773a0\\LocalConnector\\MainWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -24,7 +24,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -61,24 +61,25 @@
               "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\07562dd9ba86a0a5fead5117dd68e3c724f52eea01f79d4441c442c042cad972\\XamlReader.cs",
               "ViewState": "AgIAAHwBAAAAAAAAAAAhwIgBAAAsAAAAAQAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-21T11:41:23.841Z"
+              "WhenOpened": "2025-09-21T11:41:23.841Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Local-connector\\LocalConnector\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "LocalConnector\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\Local-connector\\LocalConnector\\MainWindow.xaml.cs",
               "RelativeToolTip": "LocalConnector\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAEBAAAAAAAAAAAAAAwBAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAPQAAAAAAAAAAAAswAgBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-13T06:54:42.527Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Local-connector\\LocalConnector\\MainWindow.xaml",
               "RelativeDocumentMoniker": "LocalConnector\\MainWindow.xaml",
